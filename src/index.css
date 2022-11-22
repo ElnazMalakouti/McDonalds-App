@@ -10,6 +10,9 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   background-image: url("https://sfondo.info/i/original/3/c/8/67278.jpg");
+  overflow: auto;
+  width: 100%;
+  height: 100%;
 }
 
 code {

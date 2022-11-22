@@ -1,10 +1,16 @@
 import './App.css';
-import FoodCard from './Components/FoodCard';
+
+
+import FoodsMenu from './Components/FoodsMenu';
 
 function App() {
-  return (
+
+  
+
+  return (    
     <div className="App">
-      <FoodCard/>
+      <FoodsMenu/>
+            
     </div>
   );
 }
