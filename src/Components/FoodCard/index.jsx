@@ -23,11 +23,11 @@ const FoodCard = ({id,name,price,picture,key}) => {
 
                 <div className="w-full flex justify-between">                    
                     <div className="flex flex-row">
-                        <button onClick={()=> dispatch(addFoodOrder(id))} className="text-[13px] rounded-[0rem .5rem .5rem 0rem] bg-[#9E1010] w-[1.5rem] flex justify-center items-center text-white"><><FaPlus/></></button>
+                        <button onClick={()=> dispatch(addFoodOrder(id))} className="text-[13px] rounded-tr-[.25rem] rounded-br-[.25rem] bg-[#9E1010] w-[1.5rem] flex justify-center items-center text-white"><><FaPlus/></></button>
                         <span className="pl-2 pr-2 bg-[#f0f8ff] font-[vazirdig] ">
                             {orderCount??0}
                         </span>
-                        <button onClick={()=> dispatch(removeFoodOrder(id))} className="text-[13px] bg-[#9E1010] w-[1.5rem] flex justify-center items-center text-white"><><FaMinus/></></button>
+                        <button onClick={()=> dispatch(removeFoodOrder(id))} className="text-[13px] rounded-tl-[.25rem] rounded-bl-[.25rem] bg-[#9E1010] w-[1.5rem] flex justify-center items-center text-white"><><FaMinus/></></button>
                     </div>
                     <div className="font-[vazirdig] flex gap-1">
                         <span>

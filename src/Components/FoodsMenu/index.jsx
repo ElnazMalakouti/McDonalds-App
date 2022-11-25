@@ -7,7 +7,7 @@ const FoodsMenu = () => {
     const foodlist = useSelector((state) => state.food.foodList)
 
     return (
-        <div className="w-[58%] max-h-[84vh]  m-4 flex flex-col rounded-[1rem] bg-[#F0F8FF] justify-center items-center gap-3">
+        <div className="w-[58%] max-h-[84vh] flex flex-col rounded-[1rem] bg-[#F0F8FF] justify-center items-center gap-3">
             <div className="w-full flex justify-center items-center border-b shadow-md p-3">
                 <p className="text-black-500 text-[30px] font-[vazirdig] font-bold">رستوران مک دونالد شعبه اصفهان</p>
             </div>

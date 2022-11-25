@@ -1,8 +1,8 @@
 import './App.css';
-import Button from './Components/Button';
 
 
 import FoodsMenu from './Components/FoodsMenu';
+import OrderCard from './Components/OrderCard';
 
 function App() {
 
@@ -10,8 +10,8 @@ function App() {
 
   return (    
     <div className="App">
-      <FoodsMenu/>
-      <Button>ثبت سفارش</Button>
+      <FoodsMenu/>      
+      <OrderCard/>
     </div>
   );
 }
