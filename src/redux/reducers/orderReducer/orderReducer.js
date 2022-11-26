@@ -1,11 +1,7 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const init = {
-    orderList : [
-        {
-            foodId : 1 ,
-            count : 3
-        }
+    orderList : [        
     ]
 }
 
@@ -35,9 +31,12 @@ const orderReducer = createSlice({
                     temp.count = temp.count - 1
                 }
             }
+        },
+        submitOrder : (state,action) => {
+            state.orderList = []
         }
     }
 })
 
-export const {addFoodOrder,removeFoodOrder} = orderReducer.actions
+export const {addFoodOrder,removeFoodOrder,submitOrder} = orderReducer.actions
 export default orderReducer.reducer

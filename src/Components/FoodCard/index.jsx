@@ -4,8 +4,7 @@ import { addFoodOrder , removeFoodOrder } from "../../redux/reducers/orderReduce
 import {useDispatch , useSelector } from "react-redux"
 
 const FoodCard = ({id,name,price,picture,key}) => {
-    const dispatch = useDispatch()
-    // const order = useSelector((state)=> state.order.orderList)
+    const dispatch = useDispatch()    
 
     const orderCount = (useSelector((state)=> state.order.orderList)).find(item => item.foodId === id)?.count
 
@@ -27,11 +26,11 @@ const FoodCard = ({id,name,price,picture,key}) => {
                         <span className="pl-2 pr-2 bg-[#f0f8ff] font-[vazirdig] ">
                             {orderCount??0}
                         </span>
-                        <button onClick={()=> dispatch(removeFoodOrder(id))} className="text-[13px] rounded-tl-[.25rem] rounded-bl-[.25rem] bg-[#9E1010] w-[1.5rem] flex justify-center items-center text-white"><><FaMinus/></></button>
+                        <button disabled={!(orderCount > 0)} onClick={()=> dispatch(removeFoodOrder(id))} className="text-[13px] rounded-tl-[.25rem] rounded-bl-[.25rem] bg-[#9E1010] w-[1.5rem] flex justify-center items-center text-white disabled:bg-gray-300 disabled:text-gray-500"><><FaMinus/></></button>
                     </div>
                     <div className="font-[vazirdig] flex gap-1">
                         <span>
-                            {(orderCount??0) * 10000}
+                            {(orderCount??0) * price}
                         </span>
                         <span>تومان</span>
                     </div>

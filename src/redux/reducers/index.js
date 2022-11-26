@@ -9,5 +9,5 @@ const combinedReducers = combineReducers({
     food : FoodReducer
 })
 
-const persistedReducer = persistReducer({key : 'rootPersist',storage,whitelist:['order','food']},combinedReducers)
+const persistedReducer = persistReducer({key : 'rootPersist',storage,whitelist:['order']},combinedReducers)
 export default persistedReducer
