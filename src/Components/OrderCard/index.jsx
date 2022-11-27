@@ -109,16 +109,21 @@ const OrderCard = () => {
                     </div>
                 </div>
 
-                <div className="w-full flex flex-col gap-2">
+                <div className="w-full flex flex-col">
                     <div className="w-full flex flex-row justify-center items-center mt-2">
                         <input value={discount.discountCode} onChange={e => setDiscount({ ...discount, discountCode: e.target.value })} className="w-[88%] h-[2.5rem] p-2 text-[15px] outline-none" placeholder="کد تخفیف" />
                         <button onClick={discountCalculator} className="w-[12%] h-[2.5rem] bg-[#9E1010] rounded-tl-[.25rem] rounded-bl-[.25rem] text-white flex justify-center items-center text-[22px]"><><MdDone /></></button>
                     </div>
-                    <small className="text-red-500 text-[12px]">{discountError}</small>
-                    <small className="text-green-500 text-[12px]">{discountValid}</small>
+                    <small className={discountError ? "min-h-[25px] pt-[5px] text-red-500 text-[12px]" : "min-h-[25px] pt-[5px] text-green-500 text-[12px]"}>
+                        {
+                            discountError ? discountError : discountValid
+                        }
+                    </small>
+                    {/* <small className="min-h-[20px] text-red-500 text-[12px]">{discountError}</small>
+                    <small className="min-h-[20px] text-green-500 text-[12px]">{discountValid}</small> */}
                 </div>
 
-                <div className="w-full flex flex-row justify-between bg-[#FFC72C] mt-[3rem] p-[.3rem] font-[vazirdig] font-bold">
+                <div className="w-full flex flex-row justify-between bg-[#FFC72C] mt-[2rem] p-[.3rem] font-[vazirdig] font-bold">
                     <p>مبلغ قابل پرداخت:</p>
                     <p>
                         {((totalPrice + ((9 * totalPrice) / 100)) - discount.percent) > 0 ? ((totalPrice + ((9 * totalPrice) / 100)) - discount.percent) : 0}
