@@ -69,6 +69,7 @@ const OrderCard = () => {
 
     useEffect(()=>{
         setDiscountError("")
+        setDiscountValid("")
     },[discount.discountCode])
 
     return (
@@ -136,6 +137,8 @@ const OrderCard = () => {
                         dispatch(submitOrder())
                         setDiscount({ ...discount, discountCode: "" })
                         setIsModalOpen(true)
+                        setDiscountError("")
+                        setDiscountValid("")
                     }}>
                         ثبت سفارش
                     </Button>
